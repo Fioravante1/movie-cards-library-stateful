@@ -8,7 +8,12 @@ class AddMovie extends Component {
   } */
   render() {
     return (
-      <form data-testid="add-movie-form" />
+      <form data-testid="add-movie-form">
+        <label data-testid="title-input-label">
+          Título
+          <input type="text" data-testid="title-input" />
+        </label>
+      </form>
     );
   }
 }
