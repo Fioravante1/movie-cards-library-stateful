@@ -8,7 +8,7 @@ class AddMovie extends Component {
   } */
   render() {
     return (
-      <h1>Fioravante</h1>
+      <form data-testid="add-movie-form" />
     );
   }
 }
