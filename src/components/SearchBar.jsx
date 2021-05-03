@@ -14,6 +14,15 @@ class SearchBar extends Component {
           Mostrar somente favoritos
           <input type="checkbox" checked={ bookmarkedOnly } onChange={ onBookmarkedChange } data-testid="checkbox-input" />
         </label>
+        <select value={ selectedGenre } onChange={ onSelectedGenreChange } data-testid="select-input">
+          <label data-testid="select-input-label">
+            Filtrar por gênero
+          </label>
+          <option value="" data-testid="select-option">Todos</option>
+          <option value="action" data-testid="select-option">Ação</option>
+          <option value="comedy" data-testid="select-option">Comédia</option>
+          <option value="thriller" data-testid="select-option">Suspense</option>
+        </select>
       </form>
     );
   }
