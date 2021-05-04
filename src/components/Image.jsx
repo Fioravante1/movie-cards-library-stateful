@@ -9,7 +9,7 @@ class Image extends Component {
         Imagem
         <input
           value={ imagePath }
-          name="image"
+          name="imagePath"
           type="text"
           data-testid="image-input"
           onChange={ handleChange }
