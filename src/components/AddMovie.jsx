@@ -5,6 +5,7 @@ import InputSubtitle from './InputSubtitle';
 import Image from './Image';
 import InputTextArea from './InputTextArea';
 import InputRating from './InputRating';
+import SelectGenre from './SelectGenre';
 
 class AddMovie extends Component {
   constructor(props) {
@@ -58,20 +59,11 @@ class AddMovie extends Component {
           onChange={ this.handleChange }
         />
 
-        <label htmlFor="genre" data-testid="genre-input-label">
-          Gênero
-          <select
-            name="genre"
-            value={ genre }
-            data-testid="genre-input"
-            onChange={ genre }
-          >
-            <option value="action" data-testid="genre-option">Ação</option>
-            <option value="comedy" data-testid="genre-option">Comédia</option>
-            <option value="thriller" data-testid="genre-option">Suspense</option>
+        <SelectGenre
+          value={ genre }
+          onChange={ this.handleChange }
+        />
 
-          </select>
-        </label>
       </form>
     );
   }

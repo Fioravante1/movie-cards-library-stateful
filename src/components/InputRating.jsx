@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class InputRating extends Component {
   render() {
-    const { rating, handleChange } = this.props;
+    const { rating } = this.props;
     return (
       <label htmlFor="avaliacao" data-testid="rating-input-label">
         Avaliação
@@ -12,7 +12,7 @@ class InputRating extends Component {
           type="number"
           value={ rating }
           data-testid="rating-input"
-          onChange={ handleChange }
+          onChange={ rating }
         />
       </label>
     );
@@ -21,7 +21,7 @@ class InputRating extends Component {
 
 InputRating.propTypes = {
   rating: PropTypes.number,
-  handleChange: PropTypes.func.isRequired,
+  // handleChange: PropTypes.func.isRequired,
 };
 
 InputRating.defaultProps = {
@@ -29,3 +29,5 @@ InputRating.defaultProps = {
 };
 
 export default InputRating;
+
+// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
