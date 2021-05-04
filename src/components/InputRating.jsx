@@ -20,12 +20,7 @@ class InputRating extends Component {
 }
 
 InputRating.propTypes = {
-  rating: PropTypes.number,
-  // handleChange: PropTypes.func.isRequired,
-};
-
-InputRating.defaultProps = {
-  rating: 'undefined',
+  rating: PropTypes.number.isRequired,
 };
 
 export default InputRating;

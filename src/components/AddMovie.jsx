@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import InputTitle from './InputTitle';
 import InputSubtitle from './InputSubtitle';
 import Image from './Image';
@@ -11,6 +11,7 @@ class AddMovie extends Component {
   constructor(props) {
     super(props);
 
+    this.onclickFunction = this.onclickFunction(this);
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
@@ -26,6 +27,20 @@ class AddMovie extends Component {
   handleChange({ target: { name, value } }) {
     this.setState({
       [name]: value,
+    });
+  }
+
+  onclickFunction() {
+    const { onClick } = this.props;
+    onClick(this.state);
+
+    this.setState({
+      subtitle: '',
+      title: '',
+      imagePath: '',
+      storyline: '',
+      rating: 0,
+      genre: 'action',
     });
   }
 
@@ -56,7 +71,7 @@ class AddMovie extends Component {
 
         <InputRating
           value={ rating }
-          onChange={ this.handleChange }
+          onChange={ rating }
         />
 
         <SelectGenre
@@ -64,13 +79,21 @@ class AddMovie extends Component {
           onChange={ this.handleChange }
         />
 
+        <button
+          type="button"
+          data-testid="send-button"
+          onClick={ this.onclickFunction }
+        >
+          Adicionar filme
+        </button>
+
       </form>
     );
   }
 }
 
-/* AddMovie.propTypes = {
-  subtitle: PropTypes.string.isRequired,
-} */
+AddMovie.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default AddMovie;
