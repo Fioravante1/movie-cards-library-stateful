@@ -24,8 +24,7 @@ class AddMovie extends Component {
     };
   }
 
-  handleChange({ target }) {
-    const { name, value } = target;
+  handleChange({ target: { name, value } }) {
     this.setState({
       [name]: value,
     });
@@ -34,7 +33,6 @@ class AddMovie extends Component {
   onclickFunction() {
     const { onClick } = this.props;
     onClick(this.state);
-
     this.setState({
       subtitle: '',
       title: '',

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 class Image extends Component {
   render() {
-    const { imagePath, handleChange } = this.props;
+    const { value, onChange } = this.props;
     return (
       <label htmlFor="image" data-testid="image-input-label">
         Imagem
         <input
-          value={ imagePath }
+          value={ value }
           name="imagePath"
           type="text"
           data-testid="image-input"
-          onChange={ handleChange }
+          onChange={ onChange }
         />
       </label>
     );
@@ -20,8 +20,8 @@ class Image extends Component {
 }
 
 Image.propTypes = {
-  imagePath: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Image;

@@ -39,7 +39,7 @@ class MovieLibrary extends Component {
 
         <MovieList movies={ movies } />
 
-        <AddMovie onClick={ this.onClick } />
+        <AddMovie />
       </>
 
     );
@@ -47,9 +47,9 @@ class MovieLibrary extends Component {
 }
 
 MovieLibrary.propTypes = {
-  movies: PropTypes.shape({
-    movies: PropTypes.string.isRequired,
-  }).isRequired,
+  movies: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
 };
 
 export default MovieLibrary;
